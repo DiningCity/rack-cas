@@ -59,7 +59,6 @@ module RackCAS
     protected
 
     def success?
-      puts xml
       @success ||= !!xml.at('/cas:serviceResponse/cas:authenticationSuccess')
     end
 
