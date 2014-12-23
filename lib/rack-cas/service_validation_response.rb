@@ -84,7 +84,7 @@ module RackCAS
 
       http = Net::HTTP.new(@url.host, @url.inferred_port)
       http.use_ssl = true if @url.scheme == 'https'
-      http.ca_file = "/usr/local/share/certs/ca-root-nss.crt" if Rails.env.production? || Rails.env.staging? # freebsd crt file for ssl
+      #http.ca_file = "/usr/local/share/certs/ca-root-nss.crt" if Rails.env.production? || Rails.env.staging? # freebsd crt file for ssl
 
       http.start do |conn|
         @response = conn.get(@url.request_uri, REQUEST_HEADERS)
